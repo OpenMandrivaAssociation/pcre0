@@ -2,7 +2,7 @@
 %define libname	%mklibname pcre %{pcre_major}
 
 Summary: 	Perl-compatible regular expression library
-Name:	 	pcre
+Name:	 	pcre0
 Version:	8.21
 Release:	2
 License: 	BSD-Style
