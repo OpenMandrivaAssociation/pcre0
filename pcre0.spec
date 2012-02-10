@@ -32,7 +32,7 @@ Summary:	Perl-compatible regular expression library
 This package contains the shared library libpcre compat.
 
 %prep
-%setup -q %{oname}-%{version}
+%setup -qn %{oname}-%{version}
 %patch1 -p1 -b .detect_into_kdelibs
 %patch2 -p0
 %patch4 -p1 -b .symbol-conflict
