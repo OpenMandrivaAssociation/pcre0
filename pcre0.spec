@@ -62,13 +62,20 @@ make check
 
 %install
 rm -rf %{buildroot}
+%makeinstall_std
 
 install -d %{buildroot}/%{_lib}
-install -d %{buildroot}/%{_libdir}
 mv %{buildroot}%{_libdir}/libpcre.so.%{pcre_major}.* %{buildroot}/%{_lib}/
 pushd %{buildroot}%{_libdir}
     ln -s ../../%{_lib}/lib%{oname}.so.%{pcre_major}.* .
 popd
+
+rm -fr %{buildroot}/%{_datadir} \
+	%{buildroot}/%{_includedir} \
+	%{buildroot}/%{_bindir} \
+	%{buildroot}/%{_libdir}/pkgconfig \
+	%{buildroot}/%{_libdir}/libpcre[a-z]* \
+	%{buildroot}/%{_libdir}/libpcre.so
 
 %files -n %{libname}
 /%{_lib}/libpcre.so.%{pcre_major}*
