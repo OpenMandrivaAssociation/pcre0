@@ -1,3 +1,4 @@
+%define oname pcre
 %define pcre_major 0
 %define libname	%mklibname pcre %{pcre_major}
 
@@ -8,8 +9,8 @@ Release:	2
 License: 	BSD-Style
 Group:  	File tools
 URL: 		http://www.pcre.org/
-Source0:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%name-%version.tar.bz2
-Source1:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%name-%version.tar.bz2.sig
+Source0:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2
+Source1:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2.sig
 BuildRequires:	autoconf automake libtool
 Patch1:		pcre-0.6.5-fix-detect-into-kdelibs.patch
 Patch2:		pcre-linkage_fix.diff
@@ -31,7 +32,7 @@ Summary:	Perl-compatible regular expression library
 This package contains the shared library libpcre compat.
 
 %prep
-%setup -q
+%setup -q %{oname}-%{version}
 %patch1 -p1 -b .detect_into_kdelibs
 %patch2 -p0
 %patch4 -p1 -b .symbol-conflict
@@ -66,7 +67,7 @@ install -d %{buildroot}/%{_lib}
 install -d %{buildroot}/%{_libdir}
 mv %{buildroot}%{_libdir}/libpcre.so.%{pcre_major}.* %{buildroot}/%{_lib}/
 pushd %{buildroot}%{_libdir}
-    ln -s ../../%{_lib}/lib%{name}.so.%{pcre_major}.* .
+    ln -s ../../%{_lib}/lib%{oname}.so.%{pcre_major}.* .
 popd
 
 %files -n %{libname}
