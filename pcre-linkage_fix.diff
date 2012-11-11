@@ -1,0 +1,18 @@
+--- Makefile.am	2009-02-27 17:02:49.000000000 +0100
++++ Makefile.am.oden	2009-06-10 16:30:38.000000000 +0200
+@@ -243,13 +243,13 @@
+ EXTRA_DIST += RunTest.bat
+ bin_PROGRAMS += pcretest
+ pcretest_SOURCES = pcretest.c
+-pcretest_LDADD = libpcreposix.la $(LIBREADLINE)
++pcretest_LDADD = libpcre.la libpcreposix.la $(LIBREADLINE)
+ 
+ TESTS += RunGrepTest
+ dist_noinst_SCRIPTS += RunGrepTest
+ bin_PROGRAMS += pcregrep
+ pcregrep_SOURCES = pcregrep.c
+-pcregrep_LDADD = libpcreposix.la $(LIBZ) $(LIBBZ2)
++pcregrep_LDADD = libpcre.la libpcreposix.la $(LIBZ) $(LIBBZ2)
+ 
+ EXTRA_DIST += \
+   testdata/grepinput \
