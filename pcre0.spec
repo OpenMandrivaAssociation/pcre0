@@ -5,7 +5,7 @@
 Summary: 	Perl-compatible regular expression library
 Name:	 	pcre0
 Version:	8.21
-Release:	2
+Release:	3
 License: 	BSD-Style
 Group:  	File tools
 URL: 		http://www.pcre.org/
