@@ -8,7 +8,7 @@ Version:	8.21
 Release:	2
 License: 	BSD-Style
 Group:  	File tools
-URL: 		http://www.pcre.org/
+URL: 		https://www.pcre.org/
 Source0:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2
 Source1:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2.sig
 BuildRequires:	autoconf automake libtool
