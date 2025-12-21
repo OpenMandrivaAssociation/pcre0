@@ -11,6 +11,8 @@ Group:  	File tools
 URL: 		https://www.pcre.org/
 Source0:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2
 Source1:	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%oname-%version.tar.bz2.sig
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf automake libtool
 Patch1:		pcre-0.6.5-fix-detect-into-kdelibs.patch
 Patch2:		pcre-linkage_fix.diff
